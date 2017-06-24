@@ -27,7 +27,7 @@
 
 <script>
     export default {
-        props: ['initialUsers' , 'current_user'],
+        props: ['initialUsers' , 'currentUser'],
 
         data() {
             return {
@@ -38,7 +38,7 @@
 
         methods: {
             createGroup() {
-                axios.post('/groups', {name: this.name, users: this.users, user_id: this.current_user.id})
+                axios.post('/groups', {name: this.name, users: this.users, user_id: this.currentUser.id})
                 .then((response) => {
                     this.name = '';
                     this.users = [];

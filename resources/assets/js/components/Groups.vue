@@ -23,7 +23,7 @@
             <div class="col-md-8">
                 <div class="tab-content">
                     <div class="tab-pane" :id="group.id" v-for="group in groups" :key="group.id">
-                        <group-chat :current_user="user" :users="group.users" :group="group">
+                        <group-chat :current-user="user" :users="group.users" :group="group">
                         </group-chat>
                     </div>
                     <!-- /.tab-pane -->

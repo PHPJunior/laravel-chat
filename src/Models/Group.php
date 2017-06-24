@@ -13,7 +13,7 @@ class Group extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class)->withTimestamps();
+        return $this->belongsToMany(config('laravel-chat.user'))->withTimestamps();
     }
 
     public function conversations()

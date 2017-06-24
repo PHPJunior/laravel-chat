@@ -6,6 +6,8 @@
     "keywords": [
         "laravel",
         "chat",
+        "messaging",
+        "conversation",
         "pusher"
     ],
     "authors": [

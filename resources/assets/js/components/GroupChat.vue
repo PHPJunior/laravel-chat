@@ -69,7 +69,7 @@
 
 <script>
     export default {
-        props: ['group', 'current_user', 'users'],
+        props: ['group', 'currentUser', 'users'],
 
         data() {
             return {
@@ -89,7 +89,7 @@
                 axios.post('/conversations', {
                     message: this.message,
                     group_id: this.group.id,
-                    user_id: this.current_user.id
+                    user_id: this.currentUser.id
                 })
                     .then((response) => {
                         this.message = '';
@@ -98,7 +98,7 @@
             },
 
             check(id) {
-                return id === this.current_user.id;
+                return id === this.currentUser.id;
             },
 
             getCurrentGroupMessage() {

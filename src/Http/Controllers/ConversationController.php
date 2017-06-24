@@ -12,8 +12,7 @@ class ConversationController extends Controller
 {
     public function show($id)
     {
-        $conversations = Conversation::with('user')->where('group_id' , $id)->get();
-        return $conversations->toJson();
+        return Conversation::with('user')->where('group_id' , $id)->get()->toJson();
     }
 
     public function store()
@@ -21,8 +20,7 @@ class ConversationController extends Controller
         $conversation = Conversation::create([
             'message' => request('message'),
             'group_id' => request('group_id'),
-            'user_id' => request('user_id'),
-            'created_at' => Carbon::now()->timezone('Asia/Rangoon')
+            'user_id' => request('user_id')
         ]);
 
         broadcast(new NewMessage($conversation))->toOthers();
