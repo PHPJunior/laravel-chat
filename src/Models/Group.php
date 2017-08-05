@@ -18,13 +18,13 @@ class Group extends Model
 
     public function conversations()
     {
-        return $this->hasMany(Conversation::class,'group_id','id');
+        return $this->hasMany(Conversation::class, 'group_id', 'id');
     }
 
     public function hasUser($user_id)
     {
         foreach ($this->users as $user) {
-            if($user->id == $user_id) {
+            if ($user->id == $user_id) {
                 return true;
             }
         }

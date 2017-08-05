@@ -4,7 +4,6 @@ namespace PhpJunior\LaravelChat\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -34,17 +33,17 @@ class NewMessage implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('groups.' . $this->conversation->group->id);
+        return new PrivateChannel('groups.'.$this->conversation->group->id);
     }
 
     public function broadcastWith()
     {
         return [
             'message' => $this->conversation->message,
-            'user' => [
-                'id' => $this->conversation->user->id,
+            'user'    => [
+                'id'   => $this->conversation->user->id,
                 'name' => $this->conversation->user->name,
-            ]
+            ],
         ];
     }
 }

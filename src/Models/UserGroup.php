@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: nyinyilwin
  * Date: 6/23/17
- * Time: 11:49 AM
+ * Time: 11:49 AM.
  */
 
 namespace PhpJunior\LaravelChat\Models;

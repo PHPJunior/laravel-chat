@@ -13,11 +13,11 @@ class LaravelChatServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        include __DIR__ . '/../routes/web.php';
+        include __DIR__.'/../routes/web.php';
 
-        $this->publishes([ $this->configPath() => config_path('laravel-chat.php')]);
-        $this->publishes([ $this->componentsPath() => base_path('resources/assets/js/components/laravel-chat')]);
-        $this->publishes([ $this->migrationsPath() => database_path('migrations')]);
+        $this->publishes([$this->configPath() => config_path('laravel-chat.php')]);
+        $this->publishes([$this->componentsPath() => base_path('resources/assets/js/components/laravel-chat')]);
+        $this->publishes([$this->migrationsPath() => database_path('migrations')]);
     }
 
     /**
@@ -35,7 +35,7 @@ class LaravelChatServiceProvider extends ServiceProvider
      */
     protected function configPath()
     {
-        return __DIR__ . '/../config/laravel-chat.php';
+        return __DIR__.'/../config/laravel-chat.php';
     }
 
     /**
@@ -54,9 +54,6 @@ class LaravelChatServiceProvider extends ServiceProvider
         return  __DIR__.'/../database/migrations';
     }
 
-    /**
-     *
-     */
     private function registerControllers()
     {
         $this->app->make('PhpJunior\LaravelChat\Http\Controllers\ConversationController');
